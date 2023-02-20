@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+Ya hemos hecho otras aplicaciones de tareas, pero esta vez vamos a usar React para llevarlas al siguiente nivel. El objetivo es que nuestra ToDo App realice las siguientes tareas:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+guardar tareas.
+marcar tareas como cumplidas.
+eliminar tareas.
+guardar fecha de creación de la tarea y fecha de cumplimiento.
+ordenar tareas por fecha.
+añadir prioridad de tareas con colores predefinidos.
+añadir tags o etiquetas personalizadas con colores personalizados.
+menú de etiquetas para mostrar sólo las tareas de dicha categoría.
+Componentes mínimos
+La aplicación debe contar con al menos los siguientes componentes (pueden tener más).
 
-## Available Scripts
+Form: un formulario donde esté el input para introducir las tareas. Deberá conectarse con el estado de la aplicación de React para llenarlo con cada tarea.
+ToDoList: el componente que renderizará la lista de tareas (componente ToDo). Esta lista provendrá del estado de la aplicación.
+ToDo: cada una de las tareas. Recibirá la información por props desde el componente padre ToDoList.
+Iteraciones
+Son muchas cosas, por lo que dividiremos el proyecto, como solemos hacer, en varias fases o iteraciones.
 
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+La primera iteración es la más básica: crear notas con botón de delete y de done. El primero eliminará la tarea; el segundo la marcará como completada (tachará el texto).
+Añadir fechas de creación y de finalización que deben mostrarse en la card de la tarea.
+Crear select para añadir prioridades (como mínimo 3: alta, media y baja prioridad). Cada prioridad añadirá un color distintivo a la card de la tarea.
+Crear botón para ordenar las notas por fecha (ascendente y descendente). Estos botones estarán en el componente ToDoList.
+Añadir un nuevo input que permita generar un sistema de etiquetas. Este input aceptará texto y permitirá darle un nombre a la etiqueta ("trabajo", "clase", etc.). La etiqueta aparecerá dentro de la card de la tarea.
+Añade un nuevo componente llamado TagsMenu que contenga todas las etiquetas o categorías de la aplicación. Cuando se haga click en una de ellas, se renderizarán exclusivamente las tareas que contengan dicha etiqueta.
+Consejos
+Lo primero que deberías hacer es crear el repositorio en GitHub.
+Sigue las iteraciones en orden y, por lo que más queráis, leed bien el enunciado.
+Sé que esto que voy a decir es como predicar en el desierto, pero deberíais diseñar y planificar la aplicación antes de empezar a programar. Pensad en cómo van a relacionarse los componentes, que props van a pasar y recibir, qué va a hacer cada uno, etc. La mitad de los problemas que vais a tener se pueden solucionar antes de empezar a teclear si os paráis 20 mins a pensar antes.
+Las tareas deberán guardarse en un estado de React. Dado que habrá que guardar mucha información (texto, fecha, prioridad, etc.), cada tarea deberá ser un objeto necesariamente. Hazlo así desde el principio y no tendrás problemas más adelante cambiando código en distintos componentes.
+Cuenta la leyenda que en lo más recóndito de internet se esconde un repositorio con decenas de ejercicios y ejemplos de JS y React... Lo hizo un sabio de tiempos antiguos cuyo nombre se ha perdido en el transcurrir de los siglos. Si no sabéis cómo hacer algo concreto, no estaría mal echarle un vistazo. El sabio, por cierto, tiene whatsapp (así es él) y puede ser contactado para solicitarle ayuda...
